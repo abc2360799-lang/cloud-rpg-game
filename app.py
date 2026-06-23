@@ -1,10 +1,23 @@
 import streamlit as st
 import random
 
-st.set_page_config(page_title="雲端 RPG 冒險遊戲", page_icon="⚔️")
+st.set_page_config(page_title="雲端 RPG 冒險遊戲 - 專屬版", page_icon="⚔️")
 
-st.title("⚔️ 雲端期末專案：RPG 勇者戰鬥模擬器")
-st.write("這是一個基於雲端部署的互動式網頁遊戲，點擊按鈕即可與怪物進行即時戰鬥！")
+#### 個人署名區域 (防抄襲專用) ####
+# 請在這裡填入你的名字和學號，這會顯示在遊戲頂部
+YOUR_NAME = "林聖凱"
+YOUR_STUDENT_ID = "3B261096"
+#### ---------------------------- ####
+
+# 顯示專屬署名標頭
+st.markdown(f"""
+<div style="background-color:#1e1e1e; padding:10px; border-radius:5px; border-bottom: 2px solid #f63366; margin-bottom:20px;">
+    <p style="color:white; margin:0; font-size:14px;">🛠️ DEVELOPER: <b>{YOUR_NAME}</b> | 專屬學號: <b>{YOUR_STUDENT_ID}</b></p>
+</div>
+""", unsafe_allow_html=True)
+
+st.title("⚔️ 雲端 RPG 冒險遊戲")
+st.write(f"這是一個基於雲端部署的互動式網頁遊戲，點擊按鈕即可與怪物進行即時戰鬥！<br><span style='font-size:12px; color:gray;'>(本程式由 {YOUR_NAME} 開發並部署於 Railway)</span>", unsafe_allow_html=True)
 
 # 初始化遊戲數據（使用 session_state 確保按按鈕時資料不會重置）
 if "player_hp" not in st.session_state:
